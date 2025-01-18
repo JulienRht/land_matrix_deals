@@ -1,0 +1,224 @@
+@import "node_modules/ol/ol.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Style du titre */
+#titre {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Centrage horizontal */
+  z-index: 1000; 
+  font: bold 30px 'Times New Roman', Times, serif;
+  color: black;
+  background: white;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style des sources */
+#sources {
+  position: absolute;
+  bottom: 22px;
+  right: 10px;
+  font: italic 15px 'Times New Roman', Times, serif;
+  color: black;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.877);
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style pour la checkbox */
+#layers {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Style pour les radios boutons */
+#radio-layers {
+  position: absolute;
+  top: 125px;
+  right: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+
+#radio-layers div {
+  margin-bottom: 10px; /* Espacement entre chaque div (donc chaque radio bouton) */
+}
+
+#radio-layers label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+/* Style pour les filtres de production */
+#production {
+  position: absolute;
+  top: 230px;
+  right: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 180px;
+  font-family: Arial, sans-serif;
+}
+
+#production div {
+  margin-bottom: 10px; /* Espacement entre chaque bouton */
+}
+
+#production label {
+  font-size: 14px; 
+  color: #333; 
+  cursor: pointer; /* Pointeur sur chaque label */
+}
+
+
+/* Style de la table */
+#attributes {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%); /* Centré horizontalement */
+  width: 80%;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  background-color: transparent;
+}
+
+#attributes table {
+  width: 100%;
+  border-collapse: collapse; /* Évite les espaces entre cellules */
+  background-color: rgba(255, 255, 255, 0.753);
+  box-sizing: border-box; /* Inclure les bordures + padding dans la largeur */
+}
+
+#attributes th, #attributes td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ffffff9d;
+}
+
+
+/* Animation au survol des éléments */
+#radio-layers:hover,
+#production:hover,
+#layers:hover,
+#attributes table:hover {
+  transform: translateY(-2px); /* élévation */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Ombre */
+}
+
+
+/* Style pour les légendes */
+#legends {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Mettre les légendes verticalement */
+  align-items: flex-start;
+}
+
+#legends img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px; /* Espacement entre les légendes */
+}
+
+/* Style pour la légende des centroides */
+#legend-centroids {
+  margin-bottom: 25px;
+  background-color: rgb(255, 255, 255); 
+  padding: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Espacement entre les items */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.legend-circle {
+  border-radius: 50%; /* faire un cercle */
+  background-color: rgba(225, 179, 117, 0.65);
+  border: 0.5px solid rgb(0, 0, 0);
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+#circle-50, #circle-100, #circle-200, #circle-500 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+/* Style de l'échelle */
+.ol-scale-line {
+  bottom: 10px;
+  left: 25px;
+  position: absolute;
+  z-index: 2000;
+  transform: scale(1.25);
+}
+
+
+/* styles de l'encadre */
+.encadre {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: "Times New Roman", serif;
+  color: #000000;
+  font-size: 17px;
+  text-align: justify;
+  z-index: 1000;
+  width: 300px; /* Largeur fixe pour gérer le texte */
+  text-decoration: none;
+}
+
+.encadre:hover {
+  background-color: #8d8d8d; /* Effet de survol */
+}

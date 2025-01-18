@@ -1,0 +1,23 @@
+<dataStore>
+  <id>DataStoreInfoImpl-a99a4dc:1940d31766b:-7fe2</id>
+  <name>land_matrix_agri</name>
+  <description>Usage de terres agricoles. De la Land Matrix, 2024.</description>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-a99a4dc:1940d31766b:-7fe4</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="fetch size">1000</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/gpkg_land_matrix_agri.gpkg</entry>
+    <entry key="read_only">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">land_matrix_agri</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2024-12-28 12:28:38.223 UTC</dateCreated>
+  <dateModified>2024-12-28 12:28:56.500 UTC</dateModified>
+  <disableOnConnFailure>false</disableOnConnFailure>
+</dataStore>

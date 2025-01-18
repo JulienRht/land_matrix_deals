@@ -1,0 +1,20 @@
+<style>
+  <id>StyleInfoImpl-a99a4dc:1940d31766b:-7fd8</id>
+  <name>deals_by_country</name>
+  <workspace>
+    <id>WorkspaceInfoImpl-a99a4dc:1940d31766b:-7fe4</id>
+  </workspace>
+  <format>sld</format>
+  <languageVersion>
+    <version>1.1.0</version>
+  </languageVersion>
+  <filename>deals_by_country.sld</filename>
+  <legend>
+    <width>155</width>
+    <height>18</height>
+    <format>image/png</format>
+    <onlineResource>deals_countries_legend.0.png</onlineResource>
+  </legend>
+  <dateCreated>2024-12-28 12:33:40.788 UTC</dateCreated>
+  <dateModified>2024-12-29 13:18:03.198 UTC</dateModified>
+</style>

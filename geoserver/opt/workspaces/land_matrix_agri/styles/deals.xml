@@ -1,0 +1,20 @@
+<style>
+  <id>StyleInfoImpl-a99a4dc:1940d31766b:-7fda</id>
+  <name>deals</name>
+  <workspace>
+    <id>WorkspaceInfoImpl-a99a4dc:1940d31766b:-7fe4</id>
+  </workspace>
+  <format>sld</format>
+  <languageVersion>
+    <version>1.1.0</version>
+  </languageVersion>
+  <filename>deals.sld</filename>
+  <legend>
+    <width>146</width>
+    <height>18</height>
+    <format>image/png</format>
+    <onlineResource>deals_legend.3.png</onlineResource>
+  </legend>
+  <dateCreated>2024-12-28 12:32:47.732 UTC</dateCreated>
+  <dateModified>2024-12-29 13:16:54.942 UTC</dateModified>
+</style>

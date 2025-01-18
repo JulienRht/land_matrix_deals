@@ -1,0 +1,23 @@
+services:
+
+  geoserver:
+    container_name: geonum_geoserver
+    image: docker.osgeo.org/geoserver:2.26.0
+    environment:
+      - RUN_UNPRIVILEGED=true
+      - CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"
+      - CORS_ENABLED=true
+      - SKIP_DEMO_DATA=true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./geoserver/opt:/opt/geoserver_data
+  
+  web:
+    container_name: geonum_web
+    image: caddy:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./app/dist/:/srv

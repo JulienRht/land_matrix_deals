@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Land Matrix Agri Deals</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Titre de la carte -->
+    <div id="titre">Agricultural deals in the Land Matrix since 2000</div>
+
+    <!-- Infos sur Land Matrix -->
+    <a href="https://landmatrix.org/" class="encadre" target="_blank">
+      The Land Matrix is an independent land monitoring initiative that promotes transparency and accountability in decisions over large-scale land acquisitions (LSLAs) in low- and middle-income countries by capturing and sharing data about these deals.
+    </a>
+    <!-- Carte -->
+    <div id="map"></div>
+
+    <!-- Légendes pour les couches WMS et centroides -->
+    <div id="legends">
+      <img id="legend-deals" />
+      <img id="legend-deals-by-country" />
+    <!-- Nouvelle légende pour les centroides -->
+    <div id="legend-centroids">
+      <div class="legend-item">
+        <div class="legend-circle" id="circle-50"></div>
+        <span>7 Deals</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-circle" id="circle-100"></div>
+        <span>15 Deals</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-circle" id="circle-200"></div>
+        <span>35 Deals</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-circle" id="circle-500"></div>
+        <span>75 Deals</span>
+      </div>
+    </div>
+    </div>
+
+    <!-- Checkbox pour les deals by country -->
+    <div id="layers" class="menu">
+      <input type="checkbox" id="checkbox-countries" name="checkbox-countries" checked />
+      <label for="checkbox-countries">Show/Hide Deals by Country layer</label>
+    </div>
+
+    <!-- Boutons radio pour sélectionner la couche (deals ou centroides) -->
+    <div id="radio-layers" class="menu">
+      <div>
+        <input type="radio" id="radio-deals" name="layer-selector" value="deals" checked />
+        <label for="radio-deals">Deals</label>
+      </div>
+      <div>
+        <input type="radio" id="radio-centroides" name="layer-selector" value="centroides" />
+        <label for="radio-centroides">Deals number by Country</label>
+      </div>
+    </div>        
+
+    <!-- Tableau pour afficher les attributs demandés -->
+    <div id="attributes" class="menu">
+      <table>
+        <tr>
+          <th>Deal ID</th>
+          <th>Creation date</th>
+          <th>Country</th>
+          <th>Crops</th>
+        </tr>
+        <tr>
+          <td id="table-deal-id">…</td>
+          <td id="table-creation-date">…</td>
+          <td id="table-country">…</td>
+          <td id="table-crops">…</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Boutons radio pour les filtrage des deals -->
+    <div id="production" class="menu">
+      <div>
+        <input type="radio" id="button-all" name="crops" value="all" />
+        <label for="button-all">Tous</label>
+      </div>
+      <div>
+        <input type="radio" id="button-soya" name="crops" value="soya_beans" />
+        <label for="button-soya">Soya Beans</label>
+      </div>
+      <div>
+        <input type="radio" id="button-palm" name="crops" value="oil_palm" />
+        <label for="button-palm">Oil Palm</label>
+      </div>
+      <div>
+        <input type="radio" id="button-cane" name="crops" value="sugar_cane" />
+        <label for="button-cane">Sugar Cane</label>
+      </div>
+    </div>  
+
+    <!-- Texte sources + auteur -->
+    <div id="sources">
+      Sources : Land Matrix, 2024<br />
+      Julien ROHAUT, M2 Géographies Numériques
+    </div>
+    <!-- Script .js -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
